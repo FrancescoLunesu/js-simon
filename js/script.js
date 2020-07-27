@@ -27,7 +27,7 @@ for (var i = 0; i<=4; i++){
 // genero un alert con il contenuto dell'array per visualizzare i 5 numeri random
 alert(numeriRandom);
 
-console.log(numeriRandom);
+// console.log(numeriRandom);
 
 // FUNZIONI //
 
@@ -46,11 +46,8 @@ function countdown(){
     timeleft -= 1;
 }
 
+// CHECK
 // FUNZIONE PER L'INSERIMENTO DEI 5 NUMERI DA PARTE DELL'UTENTE TRAMITE PROMPT
-
-// CHECK (consegna)
-// Dopo che sono stati inseriti i 5 numeri, il software dice quanti e
-// quali dei numeri da indovinare sono stati individuati.
 function inserimento(){
     for (var i = 0; i <= 4; i++){
         var userNumb = parseInt(prompt("Inserisci un numero:"));
