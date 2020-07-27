@@ -15,7 +15,8 @@ var timer = setInterval(countdown, 1000);
 // dichiaro una valiabile (array) in cui andrò a conservare i numeri inseriti dall'utente tramite prompt
 var numeriUtente = [];
 // utilizzo il metodo setTimeout per richiamare la funzione "inserimento" che inizierà dopo 30 secondi
-setTimeout(inserimento, 5000);
+// imposto 1 secondo in più perché altrimenti nel countdown che viene stampato a video non viene visualizzato l'ultimo secondo //
+setTimeout(inserimento, 6000);
 
 
 // con un ciclo for richiamo la funzione 5 volte e pushando il risultato (il numero random) dentro l'array dichiarato prima
@@ -25,10 +26,6 @@ for (var i = 0; i<=4; i++){
 }
 // genero un alert con il contenuto dell'array per visualizzare i 5 numeri random
 alert(numeriRandom);
-
-// CHECK
-// Dopo che sono stati inseriti i 5 numeri, il software dice quanti e
-// quali dei numeri da indovinare sono stati individuati.
 
 console.log(numeriRandom);
 
@@ -45,15 +42,28 @@ function countdown(){
     if(timeleft <= 0){
         clearInterval(timer);
     }
-    console.log(timeleft);
+    document.getElementById("timing").innerHTML = "Countdown: " + timeleft;
     timeleft -= 1;
 }
 
 // FUNZIONE PER L'INSERIMENTO DEI 5 NUMERI DA PARTE DELL'UTENTE TRAMITE PROMPT
+
+// CHECK (consegna)
+// Dopo che sono stati inseriti i 5 numeri, il software dice quanti e
+// quali dei numeri da indovinare sono stati individuati.
 function inserimento(){
     for (var i = 0; i <= 4; i++){
         var userNumb = parseInt(prompt("Inserisci un numero:"));
-        numeriUtente.push(userNumb);
+        // numeriUtente.push(userNumb); (prova)
+
+        // DENTRO A UN CICLO WHILE CONFRONTO I NUMERI GENERATI AL CARICAMENTO DELLA PAGINE (numeriRandom) E I NUMERI INSERITI DALL'UTENTE TRAMITE PROMPT
+        var j = 0;
+        while (j<=4){
+            if (userNumb == numeriRandom[j]){
+                numeriUtente.push(userNumb);
+            }
+            j++;
+        }
     }
-console.log(numeriUtente);
+    document.getElementById("risultato").innerHTML = "Hai indovinato: " + numeriUtente.length + " numeri!" + " I numeri indovinati sono: " + numeriUtente;
 }
