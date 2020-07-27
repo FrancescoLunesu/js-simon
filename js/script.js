@@ -9,14 +9,14 @@
 // dichiaro una variabile (array) in cui andrò ad inserire i numeri random
 var numeriRandom = [];
 // dichiaro una variabile in cui setto la durata (in secondi) del countdown
-var timeleft = 5;
+var timeleft = 30;
 // dichiaro una variabile timer in cui utilizzo il metodo setInterval (funzione, tempo)
 var timer = setInterval(countdown, 1000);
 // dichiaro una valiabile (array) in cui andrò a conservare i numeri inseriti dall'utente tramite prompt
 var numeriUtente = [];
 // utilizzo il metodo setTimeout per richiamare la funzione "inserimento" che inizierà dopo 30 secondi
 // imposto 1 secondo in più perché altrimenti nel countdown che viene stampato a video non viene visualizzato l'ultimo secondo //
-setTimeout(inserimento, 6000);
+setTimeout(inserimento, 31000);
 
 
 // con un ciclo for richiamo la funzione 5 volte e pushando il risultato (il numero random) dentro l'array dichiarato prima
