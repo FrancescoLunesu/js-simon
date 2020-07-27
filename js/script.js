@@ -8,6 +8,14 @@
 
 // dichiaro una variabile (array) in cui andrò ad inserire i numeri random
 var numeriRandom = [];
+// dichiaro una variabile in cui setto la durata (in secondi) del countdown
+var timeleft = 5;
+// dichiaro una variabile timer in cui utilizzo il metodo setInterval (funzione, tempo)
+var timer = setInterval(countdown, 1000);
+// dichiaro una valiabile (array) in cui andrò a conservare i numeri inseriti dall'utente tramite prompt
+var numeriUtente = [];
+// utilizzo il metodo setTimeout per richiamare la funzione "inserimento" che inizierà dopo 30 secondi
+setTimeout(inserimento, 5000);
 
 
 // con un ciclo for richiamo la funzione 5 volte e pushando il risultato (il numero random) dentro l'array dichiarato prima
@@ -18,11 +26,11 @@ for (var i = 0; i<=4; i++){
 // genero un alert con il contenuto dell'array per visualizzare i 5 numeri random
 alert(numeriRandom);
 
-// dichiaro una variabile in cui setto la durata (in secondi) del countdown
-var timeleft = 10;
-// dichiaro una variabile timer in cui dichiarono il metodo setInterval (funzione, tempo)
-var timer = setInterval(countdown, 300);
+// CHECK
+// Dopo che sono stati inseriti i 5 numeri, il software dice quanti e
+// quali dei numeri da indovinare sono stati individuati.
 
+console.log(numeriRandom);
 
 // FUNZIONI //
 
@@ -39,4 +47,13 @@ function countdown(){
     }
     console.log(timeleft);
     timeleft -= 1;
+}
+
+// FUNZIONE PER L'INSERIMENTO DEI 5 NUMERI DA PARTE DELL'UTENTE TRAMITE PROMPT
+function inserimento(){
+    for (var i = 0; i <= 4; i++){
+        var userNumb = parseInt(prompt("Inserisci un numero:"));
+        numeriUtente.push(userNumb);
+    }
+console.log(numeriUtente);
 }
