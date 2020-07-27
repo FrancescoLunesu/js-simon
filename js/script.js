@@ -53,14 +53,16 @@ function inserimento(){
         var userNumb = parseInt(prompt("Inserisci un numero:"));
         // numeriUtente.push(userNumb); (prova)
 
-        // DENTRO A UN CICLO WHILE CONFRONTO I NUMERI GENERATI AL CARICAMENTO DELLA PAGINE (numeriRandom) E I NUMERI INSERITI DALL'UTENTE TRAMITE PROMPT
+        // DENTRO A UN CICLO WHILE CONFRONTO I NUMERI GENERATI AL CARICAMENTO DELLA PAGINA (numeriRandom) E I NUMERI INSERITI DALL'UTENTE TRAMITE PROMPT
         var j = 0;
         while (j<=4){
+        //  SE IL NUMERO INSERITO DALL'UTENTE CORRISPONDE CON UNO DI QUELLI GENERATO DAL PRIMO ALERT ALLORA VIENE INSERITO NELL'ARRAY "numeriUtente"
             if (userNumb == numeriRandom[j]){
                 numeriUtente.push(userNumb);
             }
             j++;
         }
     }
+    // COMUNICO IL RISULTATO: QUANTI NUMERI L'UTENTE HA INDOVINATO E QUALI
     document.getElementById("risultato").innerHTML = "Hai indovinato: " + numeriUtente.length + " numeri!" + " I numeri indovinati sono: " + numeriUtente;
 }
